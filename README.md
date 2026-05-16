@@ -92,22 +92,3 @@ ToggleDarkMode/
   scripts/                构建脚本
   src/                    程序源代码
   README.md
-```
-
-## 本地构建与打包
-
-构建并运行：
-
-```powershell
-.\scripts\build-and-run.ps1
-```
-
-生成安装包：
-
-```powershell
-& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" ".\installer\ToggleDarkMode.iss"
-```
-
-输出文件：
-
-- `dist\ToggleDarkMode-Setup.exe`
