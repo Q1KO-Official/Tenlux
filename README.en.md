@@ -1,5 +1,7 @@
 # ToggleDarkMode
 
+[中文](README.md) | [English](README.en.md)
+
 A lightweight tray tool to quickly switch between Windows dark and light mode.
 
 ## Why I built this tool
@@ -24,7 +26,7 @@ Once it's running in the system tray, you can switch the system colour mode with
 
 ## Download & Installation
 
-1. Download [`ToggleDarkMode_1.0_x86.exe`](dist/ToggleDarkMode_1.0_x86.exe)
+1. Download [`dist/ToggleDarkMode-Setup.exe`](dist/ToggleDarkMode-Setup.exe)
 2. Double-click to run the installer
 3. Follow the installation wizard
 4. You can launch the program immediately after installation

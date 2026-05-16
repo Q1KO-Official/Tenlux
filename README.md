@@ -1,5 +1,7 @@
 # ToggleDarkMode
 
+[中文](README.md) | [English](README.en.md)
+
 一个专注于“快速切换 Windows 深色/浅色模式”的轻量托盘工具。
 
 ## 我为什么开发这个工具
