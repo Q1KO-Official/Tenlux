@@ -1,7 +1,6 @@
-
 # ToggleDarkMode
 
-一个“快速切换 Windows 深色/浅色模式”的轻量托盘工具。
+一个专注于“快速切换 Windows 深色/浅色模式”的轻量托盘工具。
 
 ## 我为什么开发这个工具
 
@@ -10,8 +9,7 @@ Windows 原生切换深浅色模式的路径比较长，通常需要：
 `打开设置 -> 个性化 -> 颜色 -> 选择模式 -> 深色/浅色 -> 关闭设置`
 
 这个流程在日常使用中很频繁，但步骤多、效率低。  
-所以我开发了 `ToggleDarkMode`：
-常驻系统托盘后，只需单击或双击任务栏通知区图标，就能一键切换系统深浅色模式。
+所以我开发了 `ToggleDarkMode`：常驻系统托盘后，只需单击或双击任务栏通知区图标，就能一键切换系统深浅色模式。
 
 ## 核心功能
 
@@ -25,7 +23,7 @@ Windows 原生切换深浅色模式的路径比较长，通常需要：
 
 ## 下载与安装
 
-1. 下载 [`ToggleDarkMode_1.0_x86.exe`](dist/ToggleDarkMode_1.0_x86.exe)
+1. 下载 [`dist/ToggleDarkMode-Setup.exe`](dist/ToggleDarkMode-Setup.exe)
 2. 双击运行安装程序
 3. 按安装向导完成安装
 4. 安装完成后可立即启动
@@ -47,11 +45,24 @@ Windows 原生切换深浅色模式的路径比较长，通常需要：
 
 - 兼容 x64 和 x86（64 位/32 位）Windows 系统
 
+### .NET 运行时
+
+- 运行时要求：`.NET Framework 4.0+`
+- Windows 10 / Windows 11 默认自带 `.NET Framework 4.6+`，通常无需额外安装依赖
+
+### Windows 版本兼容性
+
+- 深色模式切换依赖注册表项：  
+  `HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize`
+- 该机制要求系统版本至少为：`Windows 10 1809 (RS5)`（2018 年 11 月之后）
+
+结论：
+
 - `Windows 10 1809+`：完全支持
 - `Windows 11 全部版本`：完全支持
 - `Windows 10 1803 及更早`：程序可运行，但由于相关注册表项缺失，深色主题切换可能不生效
 
-适配范围：**所有 Windows 10 1809+ 与全部 Windows 11，零额外依赖。**
+最终适配范围：**所有 Windows 10 1809+ 与全部 Windows 11，零额外依赖。**
 
 ## 配置文件位置
 
@@ -67,3 +78,34 @@ Windows 原生切换深浅色模式的路径比较长，通常需要：
 
 - 如果切换后视觉效果延迟，通常是系统主题刷新速度导致，属于 Windows 行为
 - 若你手动禁用了相关主题项或使用第三方主题工具，可能影响切换效果
+
+## 项目结构
+
+```text
+ToggleDarkMode/
+  assets/                 图标与静态资源
+  build/                  本地编译输出（默认不提交）
+  dist/                   安装包输出
+  installer/              Inno Setup 安装脚本与语言文件
+  scripts/                构建脚本
+  src/                    程序源代码
+  README.md
+```
+
+## 本地构建与打包
+
+构建并运行：
+
+```powershell
+.\scripts\build-and-run.ps1
+```
+
+生成安装包：
+
+```powershell
+& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" ".\installer\ToggleDarkMode.iss"
+```
+
+输出文件：
+
+- `dist\ToggleDarkMode-Setup.exe`

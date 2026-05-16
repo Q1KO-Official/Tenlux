@@ -1,0 +1,14 @@
+# Build artifacts
+build/
+*.pdb
+ToggleDarkMode.cfg
+
+# IDE/editor
+.vs/
+.vscode/
+*.user
+*.suo
+
+# OS files
+Thumbs.db
+Desktop.ini
