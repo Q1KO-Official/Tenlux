@@ -14,7 +14,8 @@
 <br/>
 
 <div align="center">
-  <img src="./promo-site/media/dashboard-console-dark.png" alt="Tenlux Dashboard UI" width="700"/>
+  <img src="./promo-site/media/dashboard-console-dark.png" alt="Tenlux Dashboard UI Dark" width="48%"/>
+  <img src="./promo-site/media/dashboard-console-light.png" alt="Tenlux Dashboard UI Light" width="48%"/>
 </div>
 
 ## ✨ 核心特性
