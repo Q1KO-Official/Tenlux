@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="Tenlux.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    mc:Ignorable="d">
+
+    <ScrollViewer Padding="0,0,8,0">
+        <StackPanel Spacing="4">
+
+            <!-- ==================== App Header ==================== -->
+            <Grid Margin="0,12,0,16" ColumnDefinitions="Auto,*">
+                <Border Width="56" Height="56" CornerRadius="8"
+                        Margin="0,0,16,0">
+                    <Image Source="/Assets/AppIcon.ico" Stretch="Uniform" />
+                </Border>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                    <TextBlock x:Name="TxtAppName"
+                               Style="{StaticResource SubtitleTextBlockStyle}" />
+                    <TextBlock x:Name="TxtBrief"
+                               Style="{StaticResource CaptionTextBlockStyle}"
+                               Opacity="0.7" TextWrapping="Wrap" />
+                </StackPanel>
+            </Grid>
+
+            <!-- ==================== Version ==================== -->
+            <controls:SettingsCard x:Name="CardVersion">
+                <controls:SettingsCard.HeaderIcon>
+                    <FontIcon Glyph="&#xE8EC;" />
+                </controls:SettingsCard.HeaderIcon>
+                <TextBlock x:Name="TxtVersion" VerticalAlignment="Center"
+                           Style="{StaticResource BodyTextBlockStyle}" />
+            </controls:SettingsCard>
+
+            <!-- ==================== GitHub ==================== -->
+            <controls:SettingsCard x:Name="CardSource">
+                <controls:SettingsCard.HeaderIcon>
+                    <FontIcon Glyph="&#xE71B;" />
+                </controls:SettingsCard.HeaderIcon>
+                <HyperlinkButton x:Name="LnkGitHub"
+                                 AutomationProperties.AutomationId="AboutGitHubLink"
+                                 NavigateUri="https://github.com/Q1KO-Official/Tenlux" />
+            </controls:SettingsCard>
+
+            <!-- ==================== Developer ==================== -->
+            <controls:SettingsCard x:Name="CardDeveloper">
+                <controls:SettingsCard.HeaderIcon>
+                    <FontIcon Glyph="&#xE77B;" />
+                </controls:SettingsCard.HeaderIcon>
+                <TextBlock Text="Q1KO擎空" VerticalAlignment="Center"
+                           Style="{StaticResource BodyTextBlockStyle}" />
+            </controls:SettingsCard>
+
+            <!-- ==================== Tutorial ==================== -->
+            <controls:SettingsCard x:Name="CardTutorial">
+                <controls:SettingsCard.HeaderIcon>
+                    <FontIcon Glyph="&#xE82F;" />
+                </controls:SettingsCard.HeaderIcon>
+                <Button x:Name="BtnTutorial"
+                        AutomationProperties.AutomationId="AboutTutorialButton"
+                        Click="OnTutorialClick" />
+            </controls:SettingsCard>
+
+            <!-- ==================== Logs ==================== -->
+            <controls:SettingsCard x:Name="CardLogs">
+                <controls:SettingsCard.HeaderIcon>
+                    <FontIcon Glyph="&#xE8A5;" />
+                </controls:SettingsCard.HeaderIcon>
+                <Button x:Name="BtnExportLogs"
+                        AutomationProperties.AutomationId="AboutExportLogsButton"
+                        Click="OnExportLogsClick" />
+            </controls:SettingsCard>
+
+            <!-- ==================== Original Wallpaper ==================== -->
+            <controls:SettingsCard x:Name="CardOriginalWallpaper">
+                <controls:SettingsCard.HeaderIcon>
+                    <FontIcon Glyph="&#xE91B;" />
+                </controls:SettingsCard.HeaderIcon>
+                <Button x:Name="BtnRestoreWallpaper"
+                        AutomationProperties.AutomationId="AboutRestoreWallpaperButton"
+                        Click="OnRestoreWallpaperClick" />
+            </controls:SettingsCard>
+
+            <!-- ==================== License ==================== -->
+            <Expander AutomationProperties.AutomationId="AboutLicenseExpander"
+                      HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch"
+                      Margin="0,8,0,0">
+                <Expander.Header>
+                    <Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+                        <FontIcon Glyph="&#xE8A5;" FontSize="16" Margin="0,0,16,0" />
+                        <TextBlock x:Name="TxtLicenseHeader" Grid.Column="1"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Grid.Column="2" Text="CC BY-NC-SA 4.0"
+                                   Style="{StaticResource CaptionTextBlockStyle}"
+                                   Opacity="0.6" VerticalAlignment="Center" />
+                    </Grid>
+                </Expander.Header>
+                <Expander.Content>
+                    <TextBlock x:Name="TxtLicenseBody"
+                               TextWrapping="Wrap"
+                               FontFamily="Consolas"
+                               FontSize="12"
+                               Opacity="0.75"
+                               IsTextSelectionEnabled="True"
+                               LineHeight="18"
+                               Margin="0,4" />
+                </Expander.Content>
+            </Expander>
+
+            <!-- ==================== Copyright ==================== -->
+            <TextBlock x:Name="TxtCopyright"
+                       Style="{StaticResource CaptionTextBlockStyle}"
+                       Opacity="0.5"
+                       Margin="0,12,0,24" />
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

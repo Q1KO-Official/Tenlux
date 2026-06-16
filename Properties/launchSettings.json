@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Tenlux (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Tenlux (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
