@@ -1,0 +1,21 @@
+<svg viewBox="0 0 400 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark Shape (Bottom Layer) -->
+  <path d="M 300 50
+           L 250 50
+           A 150 150 0 0 0 250 350
+           L 300 350
+           A 50 50 0 0 0 350 300
+           L 350 100
+           A 50 50 0 0 0 300 50 Z" 
+        fill="#1E304D" stroke="#7787A0" stroke-width="4" />
+
+  <!-- Light Shape (Top Layer, Translucent for Light-Over-Dark Effect) -->
+  <path d="M 100 50
+           L 150 50
+           A 150 150 0 0 1 150 350
+           L 100 350
+           A 50 50 0 0 1 50 300
+           L 50 100
+           A 50 50 0 0 1 100 50 Z" 
+        fill="#FCF9EE" stroke="#CAB9A5" stroke-width="4" opacity="0.65" />
+</svg>
