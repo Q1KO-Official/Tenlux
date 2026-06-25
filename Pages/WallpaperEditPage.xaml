@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="Tenlux.Pages.WallpaperEditPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    mc:Ignorable="d">
+
+    <ScrollViewer Padding="0,0,8,0">
+    <StackPanel Spacing="4">
+
+        <!-- Back button -->
+        <Button x:Name="BtnBack"
+                AutomationProperties.AutomationId="WallpaperEditBackButton"
+                Click="OnBackClick"
+                Margin="0,0,0,8" />
+
+        <controls:SettingsCard x:Name="CardPresetName">
+            <TextBox x:Name="TxtPresetName"
+                     AutomationProperties.AutomationId="WallpaperEditPresetNameTextBox"
+                     Width="200"
+                     HorizontalAlignment="Left"
+                     TextChanged="OnPresetNameChanged" MaxLength="20" />
+        </controls:SettingsCard>
+
+        <controls:SettingsCard x:Name="CardDarkWall">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+                <Border Width="80" Height="50" CornerRadius="4">
+                    <Image x:Name="PicDark" Stretch="UniformToFill" />
+                </Border>
+                <TextBox x:Name="PathDark"
+                         AutomationProperties.AutomationId="WallpaperEditDarkPathTextBox"
+                         Width="200"
+                         VerticalAlignment="Center"
+                         TextChanged="OnDarkPathChanged" />
+                <Button x:Name="BtnBrowseDark"
+                        AutomationProperties.AutomationId="WallpaperEditBrowseDarkButton"
+                        Style="{StaticResource AccentButtonStyle}"
+                        VerticalAlignment="Center"
+                        Click="OnBrowseDarkClick" />
+            </StackPanel>
+        </controls:SettingsCard>
+
+        <controls:SettingsCard x:Name="CardLightWall">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+                <Border Width="80" Height="50" CornerRadius="4">
+                    <Image x:Name="PicLight" Stretch="UniformToFill" />
+                </Border>
+                <TextBox x:Name="PathLight"
+                         AutomationProperties.AutomationId="WallpaperEditLightPathTextBox"
+                         Width="200"
+                         VerticalAlignment="Center"
+                         TextChanged="OnLightPathChanged" />
+                <Button x:Name="BtnBrowseLight"
+                        AutomationProperties.AutomationId="WallpaperEditBrowseLightButton"
+                        Style="{StaticResource AccentButtonStyle}"
+                        VerticalAlignment="Center"
+                        Click="OnBrowseLightClick" />
+            </StackPanel>
+        </controls:SettingsCard>
+
+        <controls:SettingsCard x:Name="CardWallStyle">
+            <ComboBox x:Name="CmbWallStyle"
+                      AutomationProperties.AutomationId="WallpaperEditStyleComboBox"
+                      Width="200"
+                      HorizontalAlignment="Left"
+                      SelectionChanged="OnWallStyleChanged" />
+        </controls:SettingsCard>
+
+        <!-- Save button -->
+        <Button x:Name="BtnSave" Style="{StaticResource AccentButtonStyle}" Click="OnSaveClick"
+                AutomationProperties.AutomationId="WallpaperEditSaveButton"
+                HorizontalAlignment="Right" Margin="0,12,0,0" />
+
+    </StackPanel>
+    </ScrollViewer>
+</Page>
