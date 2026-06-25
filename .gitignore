@@ -41,6 +41,8 @@ BundleArtifacts/
 
 # Publish output
 publish/
+installer/Build/
+installer/Output/
 *.pubxml
 PublishScripts/
 
